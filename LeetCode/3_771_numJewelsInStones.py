@@ -40,8 +40,14 @@ class Solution:
         :type S: str
         :rtype: int
         """
-        return sum(map(S.count, J)) 
+        return sum(map(S.count, J)) #map(S.count, J)：返回list(python3 严格来说是map属性，没有影响。)
+"""
+sum(list).
+eg:sum([2,1,4]) = 7
 
+S.count:func
+
+"""
 #def numJewelsInStones(self, J, S):
 #    return sum(map(J.count, S))
 #
