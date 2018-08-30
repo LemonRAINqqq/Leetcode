@@ -47,8 +47,8 @@ class Solution:
 #
 #def numJewelsInStones(self, J, S):
 #    return sum(s in J for s in S)
-
-
-
+#等价于： for s in S:
+            #if s in J:
+                #num +=1
 
 
