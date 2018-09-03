@@ -41,3 +41,21 @@ class Solution:
             if new_x==input:
                 result = True
         return result
+#find the largest power of 10 which is smaller then x first. 
+#Then check if left most digit is equal to right most digit and so on.
+#每次提取头尾两个数，判断它们是否相等，判断后去掉头尾两个数
+class Solution2:
+    def isPalindrome(self, x):
+        """
+        :type x: int
+        :rtype: bool
+        """
+        new_x = 0
+        
+        if (x < 0 or (x>0 and x%10 == 0)):
+            return False
+        while (x > new_x):
+            new_x = new_x*10 + x%10
+            x = x//10
+            
+        return (x == new_x) or (x == new_x//10)
