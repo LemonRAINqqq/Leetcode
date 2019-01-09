@@ -5,4 +5,4 @@ xx:`My number`.<br>
 
 yy:LeetCode problem number.<br>
 
-mmm:mame of LeetCode problem.<br>
+mmm:name of LeetCode problem.<br>
