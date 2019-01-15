@@ -51,8 +51,20 @@ class Solution(object):
             else:
                 buff_dict[target - nums[i]] = i
                 
+'''
+#2019.1.15 字典遍历
+
+class Solution(object):
+    def twoSum(self,nums,target):
+        if len(nums) <= 1:
+            return False
+        dict = {}
+        for index, num in enumerate(nums):
+            diff = target - num           
+            if diff in dict:
+                return [dict[diff], index]
+            dict[num] = index
+        return None       
                 
-                
-                
-                
+'''                
                
