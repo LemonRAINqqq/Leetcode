@@ -76,12 +76,12 @@ class Solution2:
         max_length = start = 0
         max_str = ''
         for i, c in enumerate(s) :
-            if c in used and start <= used[c] :
+            if c in used and start <= used[c] : #"tmmzuxta"
                 #在used[c]之前的字符会有重复字符（c in used）阻碍，所以更新为used[c] + 1
                 start = used[c] + 1 
             else:
                 max_length = max(max_length, i - start + 1)
-                new = s[start:i]
+                new = s[start:i+1]
                 if len(new) > len(max_str):
                     max_str = new
                 #max_str = new if len(new) > len(max_str) else max_str 
