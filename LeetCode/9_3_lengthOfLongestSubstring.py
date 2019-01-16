@@ -60,3 +60,32 @@ class Solution2:
             used[c] = i
             #print(used,start,max_length)
         return max_length
+
+     
+    
+    
+    #2019.1.16 output max_length , max_str:
+    
+    class Solution3:
+    def lengthOfLongestSubstring(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        used = {}
+        max_length = start = 0
+        max_str = ''
+        for i, c in enumerate(s) :
+            if c in used and start <= used[c] :
+                #在used[c]之前的字符会有重复字符（c in used）阻碍，所以更新为used[c] + 1
+                start = used[c] + 1 
+            else:
+                max_length = max(max_length, i - start + 1)
+                new = s[start:i]
+                if len(new) > len(max_str):
+                    max_str = new
+                #max_str = new if len(new) > len(max_str) else max_str 
+                #max_str = max(max_str, mid, key=lambda x: len(x))
+            used[c] = i
+            #print(used,start,max_length,max_str)
+        return max_length,max_str
