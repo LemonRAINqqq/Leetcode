@@ -64,9 +64,9 @@ class Solution:
 
         roman = {'M': 1000,'D': 500 ,'C': 100,'L': 50,'X': 10,'V': 5,'I': 1}
         z = 0
-        for i in range(len(s)-1):
-            if roman[s[i]] < roman[s[i+1]]:
-                z = z - roman[s[i]]
+        for i in range(len(s)-1):#最后一位直接计算
+            if roman[s[i]] < roman[s[i+1]]:#先减后加（900 = -100 +1000）
+                z = z - roman[s[i]] 
             else:
                 z += roman[s[i]]
         return z + roman[s[-1]]
