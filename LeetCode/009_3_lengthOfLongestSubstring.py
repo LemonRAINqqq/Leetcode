@@ -53,11 +53,11 @@ class Solution2:
         max_length = start = 0
         for i, c in enumerate(s) :
             if c in used and start <= used[c] :
-                start = used[c] + 1
+                start = used[c] + 1 #  更新start指向最新的位置，一次顺序循环找出最佳。
             else:
                 max_length = max(max_length, i - start + 1)
             
-            used[c] = i
+            used[c] = i #字典key不可改变，value可。故相同key会更新value。
             #print(used,start,max_length)
         return max_length
 
